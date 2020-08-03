@@ -1,0 +1,20 @@
+network "BayesianColorblindness" {
+// written by aGrUM 0.16.4
+}
+
+variable G {
+   type discrete[2] {M, F};
+}
+
+variable C {
+   type discrete[2] {Y, N};
+}
+
+probability (G) {
+   default 0.48 0.52;
+}
+probability (C | G) {
+   (M) 0.08 0.92;
+   (F) 0.005 0.995;
+}
+
